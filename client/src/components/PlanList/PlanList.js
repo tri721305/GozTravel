@@ -15,9 +15,7 @@ const PlanList = ({ setCurrentId }) => {
         <div className="container">
           <div className="row justify-content-center">
             {posts.map((post) => (
-              // <div key={post._id}>
               <Plan key={post._id} post={post} setCurrentId={setCurrentId} />
-              // </div>
             ))}
           </div>
         </div>

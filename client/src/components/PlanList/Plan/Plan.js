@@ -28,7 +28,11 @@ const Plan = ({ post, setCurrentId }) => {
             <i className="fa fa-star" />
             <span>4.0</span>
           </div>
-          <h3 className="title">{post.title}</h3>
+          <h3 className="title">
+            {post.title}
+            {/* {post.id} */}
+          </h3>
+          <h5>{post.createAt}</h5>
           <p className="content">{post.message}</p>
           <Link className="btn btn-gray" to="/destination-details">
             <span>
@@ -37,13 +41,15 @@ const Plan = ({ post, setCurrentId }) => {
             </span>
           </Link>
 
-          <Link className="btn btn-gray" to="/addactivities">
+          <Link className="btn btn-gray" to="/tourlist">
             <span>
               Add your activities
               <i className="la la-arrow-right" />
             </span>
           </Link>
-          <Modal />
+          {/* <div clasName="app-container">
+            <Modal />
+          </div> */}
         </div>
       </div>
     </div>

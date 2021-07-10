@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+
+import Task from "../../TaskTri/taskForm";
 const customStyles = {
   content: {
     top: "50%",
@@ -8,6 +10,7 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    // z-index: '1000'
   },
 };
 
@@ -38,13 +41,7 @@ const TestModal = () => {
           <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
           <button onClick={closeModal}>close</button>
           <div>I am a modal</div>
-          <form>
-            <input />
-            <button>Day 1</button>
-            <button>Day 2</button>
-            <button>Day 3</button>
-            <button>Day 4</button>
-          </form>
+          <Task />
         </Modal>
       </div>
     </>

@@ -15,25 +15,28 @@ import Plan from "./components/plan1";
 import UserProfilePage from "./components/user-profile";
 const App = () => {
   return (
-    // <HashRouter basename="/">
-    <BrowserRouter>
-      {/* <Container maxWidth="lg"> */}
-      {/* <Navbar /> <NavbarVS2 /> */}
-      {/* <Navbar /> */}
-      <Switch>
-        <Route path="/" exact component={Home} />
-        {/* <Route path="/" exact component={Home} /> */}
-        <Route path="/auth" exact component={Auth} />
-        <Route path="/about" component={About} />
-        <Route path="/plan" component={Plan} />
-        <Route path="/tourlist" component={TourDetails} />
-        <Route path="/destinationlist" component={DestinationList} />
-        <Route path="/destinationlistv2" component={DestinationListV2} />
-        <Route path="/user" component={UserProfilePage} />
-      </Switch>
-      {/* </Container> */}
-    </BrowserRouter>
-    // </HashRouter>
+    <div className="App">
+      <HashRouter basename="/">
+        {/* <BrowserRouter> */}
+        {/* <Container maxWidth="lg"> */}
+        {/* <Navbar /> <NavbarVS2 /> */}
+        {/* <Navbar /> */}
+        <Switch>
+          <Route path="/" exact component={Home} />
+          {/* <Route path="/" exact component={Home} /> */}
+          <Route path="/homecreate" exact component={HomeCreate} />
+          <Route path="/auth" exact component={Auth} />
+          <Route path="/about" component={About} />
+          <Route path="/plan" component={Plan} />
+          <Route path="/tourlist" component={TourDetails} />
+          <Route path="/destinationlist" component={DestinationList} />
+          <Route path="/destinationlistv2" component={DestinationListV2} />
+          <Route path="/user" component={UserProfilePage} />
+        </Switch>
+        {/* </Container> */}
+        {/* </BrowserRouter> */}
+      </HashRouter>
+    </div>
   );
 };
 

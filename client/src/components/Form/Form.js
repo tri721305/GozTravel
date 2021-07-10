@@ -53,7 +53,7 @@ const Form = ({ currentId, setCurrentId }) => {
     return (
       <Paper className={classes.paper}>
         <Typography variant="h6" align="center">
-          Please Sign In create your own memories
+          Please Sign In create your Trip PLanner
         </Typography>
       </Paper>
     );
@@ -70,7 +70,7 @@ const Form = ({ currentId, setCurrentId }) => {
         onSubmit={handleSubmit}
       >
         <Typography variant="h6">
-          {currentId ? `Editing "${post.title}"` : "Insert your Data"}
+          {currentId ? `Editing "${post.title}"` : "Create your Trip Planner"}
         </Typography>
         {/* <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })} /> */}
         <TextField

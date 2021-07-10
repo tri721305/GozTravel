@@ -6,7 +6,7 @@ import { getPosts } from "../../actions/posts";
 import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
 
-import Navbar from "../global-components/navbar";
+import NavbarVs2 from "../Navbar/navbarvs2";
 
 import PageHeader from "../global-components/page-header";
 
@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarVs2 />
       <PageHeader headertitle="Plan lists" />
       <PlanList setCurrentId={setCurrentId} />
       <Form setCurrentId={setCurrentId} currentId={currentId} />
