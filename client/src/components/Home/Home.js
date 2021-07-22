@@ -30,9 +30,9 @@ const Home = () => {
     <>
       <NavbarVs2 />
       <PageHeader headertitle="Plan lists" />
-      <PlanList setCurrentId={setCurrentId} />
       <Form setCurrentId={setCurrentId} currentId={currentId} />
-      {/* <Modal /> */}
+      <PlanList setCurrentId={setCurrentId} />
+
       {/* <Posts setCurrentId={setCurrentId} /> */}
       <Subscribe />
       <Footer />

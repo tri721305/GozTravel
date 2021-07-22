@@ -4,7 +4,13 @@ import parse from "html-react-parser";
 // import Modal from "../Modal/testModal";
 import Modal from "../Modal/testModal";
 import moment from "moment";
+import ThumbUpAltOutlined from "@material-ui/icons/ThumbUpAltOutlined";
+import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
+import DeleteIcon from "@material-ui/icons/Delete";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { useDispatch } from "react-redux";
+
+import { likePost, deletePost } from "../../../actions/posts";
 const Plan = ({ post, setCurrentId }) => {
   let publicUrl = process.env.PUBLIC_URL + "/";
   let imagealt = "image";
@@ -20,14 +26,14 @@ const Plan = ({ post, setCurrentId }) => {
           <img src={post.selectedFile} />
         </div>
         <div className="details">
-          <div className="tp-review-meta">
+          {/* <div className="tp-review-meta">
             <i className="ic-yellow fa fa-star" />
             <i className="ic-yellow fa fa-star" />
             <i className="ic-yellow fa fa-star" />
             <i className="ic-yellow fa fa-star" />
             <i className="fa fa-star" />
             <span>4.0</span>
-          </div>
+          </div> */}
           <h3 className="title">
             {post.title}
             {/* {post.id} */}

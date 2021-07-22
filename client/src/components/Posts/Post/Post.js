@@ -105,7 +105,7 @@ const Post = ({ post, setCurrentId }) => {
           onClick={() => dispatch(likePost(post._id))}
         >
           <Likes />
-          {/* <ThumbUpAltIcon fontSize="small" /> Like {post.likeCount}{" "} */}
+          <ThumbUpAltIcon fontSize="small" /> Like {post.likeCount}{" "}
         </Button>
         {(user?.result?.googleId === post?.creator ||
           user?.result?._id === post?.creator) && (
