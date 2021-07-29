@@ -3,6 +3,7 @@ import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import FileBase from "react-file-base64";
 // import DatePicker from "react-datepicker";
+import { useHistory } from "react-router-dom";
 import useStyles from "./styles";
 import { createPost, updatePost } from "../../actions/posts";
 
@@ -16,12 +17,17 @@ const Form = ({ currentId, setCurrentId }) => {
     selectedFile: "",
   });
   const post = useSelector((state) =>
-    currentId ? state.posts.find((message) => message._id === currentId) : null
+    currentId
+      ? state.posts.posts.find((message) => message._id === currentId)
+      : null
   );
   const dispatch = useDispatch();
   const classes = useStyles();
 
   const user = JSON.parse(localStorage.getItem("profile"));
+
+  const history = useHistory();
+
   useEffect(() => {
     if (post) setPostData(post);
   }, [post]);
@@ -41,7 +47,8 @@ const Form = ({ currentId, setCurrentId }) => {
     e.preventDefault();
 
     if (currentId === 0) {
-      dispatch(createPost({ ...postData, name: user?.result?.name }));
+      dispatch(createPost({ ...postData, name: user?.result?.name }, history));
+      // history.push(`/posts/${}`)
       clear();
     } else {
       dispatch(
@@ -160,7 +167,7 @@ const Form = ({ currentId, setCurrentId }) => {
     //     </Button>
     //   </form>
     // </Paper>
-    <Paper className={classes.paper}>
+    <Paper className={classes.paper} elevation={6}>
       <form
         autoComplete="off"
         noValidate

@@ -6,22 +6,14 @@ import { CircularProgress, Grid } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import useStyles from "./styles";
 const PlanList = ({ setCurrentId }) => {
-  const posts = useSelector((state) => state.posts);
+  const { posts, isLoading } = useSelector((state) => state.posts);
   const classes = useStyles();
-  return !posts.length ? (
+
+  if (!posts.length && !isLoading) return "No posts";
+
+  return isLoading ? (
     <CircularProgress />
   ) : (
-    // <div className="destination-area viaje-go-top">
-    //   <div className="container-bg mg-top--70">
-    //     <div className="container">
-    //       <div className="row justify-content-center">
-    //         {posts.map((post) => (
-    //           <Plan1 key={post._id} post={post} setCurrentId={setCurrentId} />
-    //         ))}
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
     <div style={{ marginTop: 40 }}>
       <Grid
         className={classes.container}
@@ -30,7 +22,7 @@ const PlanList = ({ setCurrentId }) => {
         spacing={3}
       >
         {posts.map((post) => (
-          <Grid key={post._id} item xs={12} sm={3} md={3}>
+          <Grid key={post._id} item xs={12} sm={12} md={6} lg={4}>
             <Plan1 post={post} setCurrentId={setCurrentId} />
           </Grid>
         ))}
